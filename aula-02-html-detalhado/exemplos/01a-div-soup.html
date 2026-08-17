@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo: só com div (evite isso)</title>
+</head>
+<body>
+    <!--
+        Este arquivo funciona no navegador, mas é "div soup":
+        tudo é <div>, então nada tem significado para leitores de tela,
+        motores de busca ou para quem só lê o código.
+        Compare com 01b-semantico.html.
+    -->
+    <div class="topo">
+        <div class="titulo">Meu Blog</div>
+        <div class="menu">
+            <div class="menu-item"><a href="#post1">Primeiro Post</a></div>
+            <div class="menu-item"><a href="#post2">Segundo Post</a></div>
+        </div>
+    </div>
+
+    <div class="conteudo">
+        <div class="post" id="post1">
+            <div class="post-titulo">Primeiro Post</div>
+            <div class="post-data">17/08/2026</div>
+            <div class="post-texto">Texto do primeiro post...</div>
+        </div>
+
+        <div class="post" id="post2">
+            <div class="post-titulo">Segundo Post</div>
+            <div class="post-data">19/08/2026</div>
+            <div class="post-texto">Texto do segundo post...</div>
+        </div>
+    </div>
+
+    <div class="lateral">
+        <div class="lateral-titulo">Categorias</div>
+        <div class="lateral-item">HTML</div>
+        <div class="lateral-item">CSS</div>
+    </div>
+
+    <div class="rodape">
+        <div>&copy; 2026 - Meu Blog</div>
+    </div>
+</body>
+</html>
