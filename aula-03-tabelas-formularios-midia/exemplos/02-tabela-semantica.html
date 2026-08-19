@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabela Semântica</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        max-width: 600px;
+        border-collapse: collapse;
+      }
+      caption {
+        caption-side: top;
+        font-weight: bold;
+        padding: 8px;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      thead th {
+        background: #186fad;
+        color: white;
+      }
+      tbody tr:nth-child(even) {
+        background: #f7fbfe;
+      }
+      tbody tr:hover {
+        background: #e3f1fa;
+      }
+      tfoot {
+        font-weight: bold;
+        background: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Vendas de equipamentos — agosto/2026
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Produto</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Preço unitário</th>
+          <th scope="col">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Notebook</th>
+          <td>2</td>
+          <td>R$ 3.000,00</td>
+          <td>R$ 6.000,00</td>
+        </tr>
+        <tr>
+          <th scope="row">Monitor</th>
+          <td>3</td>
+          <td>R$ 900,00</td>
+          <td>R$ 2.700,00</td>
+        </tr>
+        <tr>
+          <th scope="row">Teclado</th>
+          <td>5</td>
+          <td>R$ 150,00</td>
+          <td>R$ 750,00</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="3">Total</th>
+          <td>R$ 9.450,00</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

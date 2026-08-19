@@ -17,7 +17,7 @@ Cada aula tem sua própria pasta, nomeada `aula-XX-tema`, contendo os slides e u
 - `exemplos/` — arquivos de código prontos para abrir e explorar em aula
 - `pratica/` — enunciado dos exercícios, um esqueleto para o aluno completar e uma solução de referência
 
-Dias de **prática pura** (sem conteúdo novo) não têm pasta própria: os materiais ficam dentro da pasta da aula de conteúdo que os originou (ex.: as práticas de HTML de 19/08 e 26/08 estão em `aula-02-html-detalhado/pratica/`).
+Dias de **prática pura** (sem conteúdo novo) não têm pasta própria: os materiais ficam dentro da pasta da aula de conteúdo que os originou (ex.: a prática de HTML de 19/08 está em `aula-02-html-detalhado/pratica/` e a de 26/08 em `aula-03-tabelas-formularios-midia/pratica/`).
 
 ## Planejamento das aulas
 

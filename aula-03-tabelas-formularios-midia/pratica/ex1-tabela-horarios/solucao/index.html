@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Horários — Solução</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .tabela-wrapper {
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+        }
+        caption {
+            caption-side: top;
+            font-weight: bold;
+            padding: 8px;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        thead th {
+            background: #186fad;
+            color: white;
+        }
+        tbody tr:nth-child(even) {
+            background: #f7fbfe;
+        }
+        tfoot {
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+        .intervalo {
+            background: #fff3cd;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabela-wrapper">
+        <table>
+            <caption>Horários da turma de Engenharia de Software — 2026.2</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Horário</th>
+                    <th scope="col">Segunda</th>
+                    <th scope="col">Terça</th>
+                    <th scope="col">Quarta</th>
+                    <th scope="col">Quinta</th>
+                    <th scope="col">Sexta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">14:00 – 14:50</th>
+                    <!-- rowspan: POO ocupa dois horários seguidos na terça e quinta -->
+                    <td>Banco de Dados</td>
+                    <td rowspan="2">POO</td>
+                    <td>Banco de Dados</td>
+                    <td rowspan="2">POO</td>
+                    <td>Matemática Discreta</td>
+                </tr>
+                <tr>
+                    <th scope="row">14:50 – 15:40</th>
+                    <td>Banco de Dados</td>
+                    <td>Matemática Discreta</td>
+                    <td>Matemática Discreta</td>
+                </tr>
+                <tr>
+                    <!-- colspan cobre todas as 6 colunas da tabela -->
+                    <td colspan="6" class="intervalo">Intervalo (15:40 – 15:50)</td>
+                </tr>
+                <tr>
+                    <th scope="row">15:50 – 16:40</th>
+                    <td>Programação Web I</td>
+                    <td>Inglês</td>
+                    <td>Programação Web I</td>
+                    <td>Engenharia de Software</td>
+                    <td>Estrutura de Dados</td>
+                </tr>
+                <tr>
+                    <th scope="row">16:40 – 17:30</th>
+                    <td>Programação Web I</td>
+                    <td>Inglês</td>
+                    <td>Programação Web I</td>
+                    <td>Engenharia de Software</td>
+                    <td>Estrutura de Dados</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row" colspan="5">Carga horária semanal</th>
+                    <td>20 aulas</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+</html>

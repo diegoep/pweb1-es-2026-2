@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vídeo e Áudio em HTML</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      h1,
+      h2 {
+        color: #186fad;
+      }
+      section {
+        margin-bottom: 40px;
+      }
+      video,
+      iframe {
+        max-width: 100%;
+      }
+      figcaption {
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Multimídia nativa em HTML</h1>
+
+    <section>
+      <h2>1. Vídeo com <code>&lt;video&gt;</code></h2>
+      <!-- controls exibe os controles nativos do navegador.
+           O texto interno é o fallback para navegadores sem suporte. -->
+      <figure>
+        <video controls width="640" preload="metadata">
+          <source
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+            type="video/webm"
+          />
+          Seu navegador não suporta vídeo HTML5.
+          <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+            Baixe o vídeo</a>.
+        </video>
+        <figcaption>Vídeo de exemplo (CC0, MDN Web Docs).</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>2. Áudio com <code>&lt;audio&gt;</code></h2>
+      <figure>
+        <audio controls preload="none">
+          <source
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+            type="audio/mpeg"
+          />
+          Seu navegador não suporta áudio HTML5.
+        </audio>
+        <figcaption>Rugido de T-Rex (CC0, MDN Web Docs).</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>3. Vídeo de fundo (autoplay exige <code>muted</code>)</h2>
+      <!-- Navegadores bloqueiam autoplay com som: autoplay só funciona
+           combinado com muted. loop reinicia ao terminar. -->
+      <video autoplay muted loop playsinline width="320">
+        <source
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+          type="video/webm"
+        />
+      </video>
+    </section>
+
+    <section>
+      <h2>4. Incorporando vídeo externo com <code>&lt;iframe&gt;</code></h2>
+      <!-- Serviços como YouTube fornecem o código de embed pronto
+           (botão Compartilhar → Incorporar). -->
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/kUMe1FH4CHE"
+        title="Learn HTML — freeCodeCamp"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </section>
+  </body>
+</html>

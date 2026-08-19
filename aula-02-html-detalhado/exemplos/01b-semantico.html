@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo: com elementos semânticos</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #post1 {
+            background-color: #ff0000;
+        }
+        article {
+            border: 1px solid #c0c0c0;
+        }
+        .exemplo-codigo {
+            background: #117940;
+        }
+    </style>
 </head>
 <body>
     <!--
@@ -26,13 +40,18 @@
         <article id="post1">
             <h2>Primeiro Post</h2>
             <p><time datetime="2026-08-17">17/08/2026</time></p>
-            <p>Texto do primeiro post...</p>
+            <p>Texto do <em><strong>primeiro post</strong></em>...</p>
         </article>
 
         <article id="post2">
             <h2>Segundo Post</h2>
             <p><time datetime="2026-08-19">19/08/2026</time></p>
             <p>Texto do segundo post...</p>
+        </article>
+
+        <article class="exemplo-codigo">
+            <h2>Exemplo de código</h2>
+            <code>var x = 10;</code>
         </article>
     </main>
 
@@ -43,6 +62,40 @@
             <li>CSS</li>
         </ul>
     </aside>
+
+    <pre>Esse é um   texto 
+        Muito legal!</pre>
+    
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3
+           <ul>
+            <li>Sub item 1</li>
+            <li>Sub item 2
+                <ol>
+                    <li>Sub sub item</li>
+                </ol>
+            </li>
+           </ul>     
+
+        </li>
+    </ul>
+
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ol>
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+    </dl>
 
     <footer>
         <p>&copy; 2026 - Meu Blog</p>
