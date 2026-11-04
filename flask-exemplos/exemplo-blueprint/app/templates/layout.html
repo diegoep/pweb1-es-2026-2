@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demonstração Blueprints</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            #conteudo {
+                padding: 10px;
+                background-color: #c0c0c0;
+            }
+        </style>
+    </head>
+    <body>
+        {% block menu %}
+        <nav>
+        <h2>Menu de Navegação</h2>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+        </nav>
+         <section>
+        <h1 class="text-3xl font-bold underline">
+            Exemplo de Blueprints - Área Pública
+        </h1>
+        </section>
+        {% endblock %}
+       
+        <section id="conteudo">
+        {% block conteudo %}{% endblock %}
+        </section>
+        {% block rodape %}
+        &copy; IFPB 2026
+        {% endblock %}
+    </body>
+</html>

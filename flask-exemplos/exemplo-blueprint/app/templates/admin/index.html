@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demonstração Blueprints</title>
+        <style>
+            body {
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Exemplo de Blueprints - Área Administrativa</h1>
+        <h2>Lista de Usuários</h2>
+        <ul>
+        {% for u in usuarios %}
+            <li>{{ u }}</li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>
