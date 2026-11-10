@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrinho de compras{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-2xl font-bold">Carrinho de compras</h1>
+
+    <form method="post" action="{{ url_for('main.carrinho') }}" class="flex items-end gap-2">
+        <label class="flex-1">
+            <span class="mb-1 block text-sm font-medium">Produto</span>
+            <input type="text" name="produto" class="w-full rounded border border-gray-300 px-3 py-2">
+        </label>
+        <button type="submit" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Adicionar</button>
+    </form>
+
+    <ul class="mt-6 divide-y divide-gray-200">
+    {% for produto in session.produtos %}
+        <li class="py-2">{{ produto }}</li>
+    {% else %}
+        <li class="py-2 text-gray-500">Seu carrinho está vazio.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

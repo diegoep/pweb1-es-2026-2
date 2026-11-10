@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Identificação{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-2xl font-bold">Identificação</h1>
+
+    {% if session.nome %}
+    <p class="mb-4">Meu nome é: <strong>{{ session.nome }}</strong></p>
+    {% endif %}
+
+    <form method="post" action="{{ url_for('main.index') }}" class="flex items-end gap-2">
+        <label class="flex-1">
+            <span class="mb-1 block text-sm font-medium">Nome</span>
+            <input type="text" name="nome" class="w-full rounded border border-gray-300 px-3 py-2">
+        </label>
+        <button type="submit" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Enviar</button>
+    </form>
+
+    <a href="{{ url_for('main.carrinho') }}" class="mt-6 inline-block text-blue-600 hover:underline">Ir para o carrinho →</a>
+{% endblock %}

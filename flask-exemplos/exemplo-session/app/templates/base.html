@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Exemplo de Sessão{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 text-gray-800">
+    <nav class="bg-white shadow">
+        <div class="mx-auto flex max-w-xl items-center justify-between px-4 py-3">
+            <a href="{{ url_for('main.index') }}" class="font-semibold hover:text-blue-600">Início</a>
+            <a href="{{ url_for('main.carrinho') }}" class="text-blue-600 hover:underline">
+                Carrinho ({{ session.produtos|length }})
+            </a>
+        </div>
+    </nav>
+
+    <main class="mx-auto mt-8 max-w-xl px-4">
+        <div class="rounded-lg bg-white p-6 shadow">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</body>
+</html>
