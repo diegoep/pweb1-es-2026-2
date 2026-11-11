@@ -1,0 +1,4 @@
+venv/
+__pycache__/
+data/usuarios.csv
+data/pedidos.csv

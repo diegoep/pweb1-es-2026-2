@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrinho{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-2xl font-bold">Carrinho</h1>
+
+    {% if itens %}
+        <table class="w-full text-left">
+            <thead class="border-b text-sm text-gray-500">
+                <tr><th class="py-2">Produto</th><th>Qtd.</th><th>Subtotal</th><th></th></tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+            {% for item in itens %}
+                <tr>
+                    <td class="py-2">{{ item.produto.nome }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>R$ {{ '%.2f'|format(item.subtotal) }}</td>
+                    <td class="text-right">
+                        <form method="post" action="{{ url_for('loja.remover', produto_id=item.produto.id) }}">
+                            <button class="text-sm text-red-600 hover:underline">remover</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <p class="mt-4 text-right text-lg font-bold">Total: R$ {{ '%.2f'|format(total) }}</p>
+
+        <form method="post" action="{{ url_for('loja.finalizar') }}" class="mt-4 text-right">
+            <button class="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700">Finalizar compra</button>
+        </form>
+    {% else %}
+        <p class="text-gray-500">Seu carrinho está vazio.</p>
+    {% endif %}
+{% endblock %}
