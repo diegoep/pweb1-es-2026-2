@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-2xl font-bold">Produtos</h1>
+
+    <ul class="divide-y divide-gray-200">
+    {% for produto in produtos %}
+        <li class="flex items-center justify-between py-3">
+            <div>
+                <p class="font-medium">{{ produto.nome }}</p>
+                <p class="text-sm text-gray-500">R$ {{ '%.2f'|format(produto.preco) }}</p>
+            </div>
+            <form method="post" action="{{ url_for('loja.adicionar', produto_id=produto.id) }}">
+                <button class="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700">Adicionar</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

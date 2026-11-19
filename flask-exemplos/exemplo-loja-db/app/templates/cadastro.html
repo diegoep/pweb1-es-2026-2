@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-2xl font-bold">Criar conta</h1>
+
+    <form method="post" class="flex flex-col gap-3">
+        <label>
+            <span class="mb-1 block text-sm font-medium">Nome</span>
+            <input type="text" name="nome" required class="w-full rounded border border-gray-300 px-3 py-2">
+        </label>
+        <label>
+            <span class="mb-1 block text-sm font-medium">E-mail</span>
+            <input type="email" name="email" required class="w-full rounded border border-gray-300 px-3 py-2">
+        </label>
+        <label>
+            <span class="mb-1 block text-sm font-medium">Senha</span>
+            <input type="password" name="senha" required minlength="4" class="w-full rounded border border-gray-300 px-3 py-2">
+        </label>
+        <button class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Cadastrar</button>
+    </form>
+{% endblock %}

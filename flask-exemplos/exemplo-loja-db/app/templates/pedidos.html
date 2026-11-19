@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Meus pedidos{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-2xl font-bold">Meus pedidos</h1>
+
+    {% for pedido in pedidos|reverse %}
+        <div class="mb-4 rounded border border-gray-200 p-4">
+            <div class="mb-2 flex justify-between text-sm text-gray-500">
+                <span>Pedido #{{ pedido.id }} · {{ pedido.data.strftime('%d/%m/%Y %H:%M') }}</span>
+                <span class="font-bold text-gray-800">R$ {{ '%.2f'|format(pedido.total) }}</span>
+            </div>
+            <ul class="text-sm">
+            {% for item in pedido.itens %}
+                <li>{{ item.quantidade }}× {{ item.produto.nome }} — R$ {{ '%.2f'|format(item.subtotal) }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p class="text-gray-500">Você ainda não fez pedidos.</p>
+    {% endfor %}
+{% endblock %}

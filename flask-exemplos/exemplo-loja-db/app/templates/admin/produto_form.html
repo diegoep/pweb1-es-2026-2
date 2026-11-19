@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin · {{ 'Editar' if produto else 'Novo' }} produto{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-2xl font-bold">{{ 'Editar' if produto else 'Novo' }} produto</h1>
+
+    <form method="post" class="flex flex-col gap-3">
+        <label>
+            <span class="mb-1 block text-sm font-medium">Nome</span>
+            <input type="text" name="nome" required value="{{ produto.nome if produto }}"
+                   class="w-full rounded border border-gray-300 px-3 py-2">
+        </label>
+        <label>
+            <span class="mb-1 block text-sm font-medium">Preço</span>
+            <input type="number" name="preco" step="0.01" min="0" required value="{{ produto.preco if produto }}"
+                   class="w-full rounded border border-gray-300 px-3 py-2">
+        </label>
+        <div class="flex gap-2">
+            <button class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Salvar</button>
+            <a href="{{ url_for('admin.produtos') }}" class="rounded px-4 py-2 hover:bg-gray-100">Cancelar</a>
+        </div>
+    </form>
+{% endblock %}
